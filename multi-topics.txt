@@ -1,0 +1,219 @@
+# ==========================================================
+# PYTHON FUNDAMENTALS – INPUT, LOGIC, OPERATORS & MINI APPS
+# ==========================================================
+# These notes cover:
+# • Input and type casting
+# • Math functions
+# • Logical operators
+# • if / elif / else
+# • Small real-world programs
+# This is the same logic used in Django, FastAPI & APIs
+
+# ----------------------------------------------------------
+# 1) BUILT-IN MATH FUNCTIONS
+# ----------------------------------------------------------
+# Python provides many built-in functions for working with numbers
+
+x = 5
+y = -5
+z = 10
+
+# round() → rounds a float to nearest integer
+print(round(20.6))          # 21
+
+# abs() → converts negative to positive
+print(abs(y))              # 5
+
+# pow(base, power) → base raised to power
+print(pow(x, 2))           # 25
+print(pow(4, 3))           # 64
+
+# min() & max() → get smallest and largest number
+print(min(3, 6, 1))        # 1
+print(max(3, 6, 1))        # 6
+
+
+# ----------------------------------------------------------
+# 2) LOGICAL OPERATORS
+# ----------------------------------------------------------
+# Used to check multiple conditions
+# or  → at least one condition must be True
+# and → all conditions must be True
+# not → reverses True to False and False to True
+
+temp = 36
+is_raining = False
+
+# Using OR
+if temp > 35 or temp < 0 or is_raining:
+    print("Outdoor event is cancelled")
+else:
+    print("Outdoor event is scheduled")
+
+# Using AND
+temp = 30
+is_sunny = True
+
+if temp >= 30 and is_sunny:
+    print("It is HOT and SUNNY")
+else:
+    print("Weather is normal")
+
+# Using NOT
+is_cloudy = True
+
+if not is_cloudy:
+    print("Sky is clear")
+else:
+    print("Sky is cloudy")
+
+
+# ----------------------------------------------------------
+# 3) USER INPUT & TYPE CASTING
+# ----------------------------------------------------------
+# input() always returns STRING
+# We convert it into int or float for calculations
+
+name = input("Enter your name: ")
+print(f"Hello {name}")
+
+num1 = input("Enter number 1: ")
+num2 = input("Enter number 2: ")
+
+# Convert strings to integers
+print(f"{num1} + {num2} = {int(num1) + int(num2)}")
+
+
+# ----------------------------------------------------------
+# 4) USER PROFILE MINI APP
+# ----------------------------------------------------------
+
+your_name = input("What is your name: ")
+city = input("Where do you live: ")
+phone = input("Enter phone number: ")
+color = input("Favorite color: ")
+
+print("\n===== USER DETAILS =====")
+print(f"Name: {your_name}")
+print(f"City: {city}")
+print(f"Phone: {phone}")
+print(f"Favorite Color: {color}")
+
+
+# ----------------------------------------------------------
+# 5) AGE CALCULATOR
+# ----------------------------------------------------------
+
+age = int(input("Enter your age: "))
+
+# += adds a value to existing variable
+age += 1
+
+print(f"Next year your age will be {age}")
+
+
+# ----------------------------------------------------------
+# 6) AREA CALCULATOR
+# ----------------------------------------------------------
+
+length = float(input("Enter length: "))
+width = float(input("Enter width: "))
+
+area = length * width
+print(f"Area = {area} cm")
+
+
+# ----------------------------------------------------------
+# 7) SHOPPING CART
+# ----------------------------------------------------------
+
+item = input("Item name: ")
+price = float(input("Price: "))
+quantity = int(input("Quantity: "))
+
+total = price * quantity
+
+print(f"You bought {quantity} {item}(s)")
+print(f"Total bill = ${total}")
+
+
+# ----------------------------------------------------------
+# 8) MADLIBS GAME
+# ----------------------------------------------------------
+
+adj1 = input("Enter an adjective: ")
+noun = input("Enter a noun: ")
+adj2 = input("Enter another adjective: ")
+verb = input("Enter a verb ending with 'ing': ")
+adj3 = input("Enter another adjective: ")
+
+print("\n--- STORY ---")
+print(f"Today I went to a {adj1} zoo")
+print(f"I saw a {noun}")
+print(f"The {noun} was {adj2} and {verb}")
+print(f"I felt very {adj3}")
+
+
+# ----------------------------------------------------------
+# 9) IF / ELIF / ELSE
+# ----------------------------------------------------------
+
+marks = int(input("Enter your marks: "))
+
+if marks >= 80:
+    print("Excellent")
+elif marks >= 60:
+    print("Good")
+else:
+    print("Try harder next time")
+
+
+# Checking user name
+name = input("Enter your name: ")
+
+if name == "Faisal" or name == "Hamdan":
+    print("Welcome, authorized user")
+else:
+    print("Access denied")
+
+
+# ----------------------------------------------------------
+# 10) BOOLEAN CHECK
+# ----------------------------------------------------------
+
+user_online = True
+
+if user_online:
+    print("User is online")
+else:
+    print("User is offline")
+
+
+# ----------------------------------------------------------
+# 11) MINI PROJECT – CALCULATOR
+# ----------------------------------------------------------
+
+operator = input("Enter operator (+, -, *, /): ")
+num_1 = float(input("Enter first number: "))
+num_2 = float(input("Enter second number: "))
+
+# Prevent division by zero
+if operator == "/" and num_2 == 0:
+    print("Cannot divide by zero")
+    exit()
+
+# Perform operation
+if operator == "+":
+    result = num_1 + num_2
+elif operator == "-":
+    result = num_1 - num_2
+elif operator == "*":
+    result = num_1 * num_2
+elif operator == "/":
+    result = num_1 / num_2
+else:
+    print("Invalid operator")
+    exit()
+
+# round() used to limit decimal places
+print(f"Result = {round(result, 3)}")
