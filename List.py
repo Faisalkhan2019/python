@@ -79,6 +79,7 @@ print(my_list[3:])
 my_list = ["School", "College", "University", "Lahore", "Shahdara"]
 
 print(my_list)
+# Output: ['School', 'College', 'University', 'Lahore', 'Shahdara']
 
 
 # ------------------------------------------------------
@@ -86,12 +87,20 @@ print(my_list)
 # ------------------------------------------------------
 
 print(my_list[0])      # First item → School
+# Output: School
+
 print(my_list[-1])     # Last item → Shahdara
+# Output: Shahdara
 
 # Slicing (getting part of list)
 print(my_list[:2])     # First two items
+# Output: ['School', 'College']
+
 print(my_list[2:])     # From index 2 to end
+# Output: ['University', 'Lahore', 'Shahdara']
+
 print(my_list[1:4])    # From index 1 to 3
+# Output: ['College', 'University', 'Lahore']
 
 
 # ------------------------------------------------------
@@ -101,10 +110,12 @@ print(my_list[1:4])    # From index 1 to 3
 # Change a single item
 my_list[0] = "Faisal"
 print(my_list)
+# Output: ['Faisal', 'College', 'University', 'Lahore', 'Shahdara']
 
 # Change multiple items using slicing
 my_list[1:3] = ["Add", "Remove"]
 print(my_list)
+# Output: ['Faisal', 'Add', 'Remove', 'Lahore', 'Shahdara']
 
 
 # ------------------------------------------------------
@@ -114,10 +125,12 @@ print(my_list)
 # Insert items at index 1
 my_list[1:1] = ["Test", "Demo"]
 print(my_list)
+# Output: ['Faisal', 'Test', 'Demo', 'Add', 'Remove', 'Lahore', 'Shahdara']
 
 # Delete items using slicing
 my_list[1:3] = []
 print(my_list)
+# Output: ['Faisal', 'Add', 'Remove', 'Lahore', 'Shahdara']
 
 
 # ------------------------------------------------------
@@ -127,9 +140,17 @@ print(my_list)
 for item in my_list:
     print(item)
 
+# Output:
+# Faisal
+# Add
+# Remove
+# Lahore
+# Shahdara
+
 # Print items in one line
 for item in my_list:
     print(item, end=" | ")
+# Output: Faisal | Add | Remove | Lahore | Shahdara |
 
 
 # ------------------------------------------------------
@@ -141,6 +162,8 @@ if "Lahore" in my_list:
 else:
     print("Lahore not found")
 
+# Output: Lahore exists in the list
+
 
 # ------------------------------------------------------
 # 7) ADDING & REMOVING ITEMS
@@ -148,15 +171,19 @@ else:
 
 my_list.append("Narowal")    # add at the end
 print(my_list)
+# Output: ['Faisal', 'Add', 'Remove', 'Lahore', 'Shahdara', 'Narowal']
 
 my_list.insert(2, "Mall Road")   # add at specific index
 print(my_list)
+# Output: ['Faisal', 'Add', 'Mall Road', 'Remove', 'Lahore', 'Shahdara', 'Narowal']
 
 my_list.remove("Narowal")    # remove by value
 print(my_list)
+# Output: ['Faisal', 'Add', 'Mall Road', 'Remove', 'Lahore', 'Shahdara']
 
 last_item = my_list.pop()   # remove last item
 print("Removed:", last_item)
+# Output: Removed: Shahdara
 
 # Clear the entire list
 # my_list.clear()
@@ -167,8 +194,13 @@ print("Removed:", last_item)
 # ------------------------------------------------------
 
 print(len(my_list))         # number of items
+# Output: 5
+
 print(my_list.index("Lahore"))   # index of Lahore
+# Output: 4
+
 print(my_list.count("Lahore"))   # how many times Lahore appears
+# Output: 1
 
 
 # ------------------------------------------------------
@@ -177,9 +209,11 @@ print(my_list.count("Lahore"))   # how many times Lahore appears
 
 my_list.sort()      # sort alphabetically
 print(my_list)
+# Output: ['Add', 'Faisal', 'Lahore', 'Mall Road', 'Remove']
 
 my_list.reverse()   # reverse order
 print(my_list)
+# Output: ['Remove', 'Mall Road', 'Lahore', 'Faisal', 'Add']
 
 
 # ------------------------------------------------------
@@ -188,6 +222,7 @@ print(my_list)
 
 copy_list = my_list.copy()
 print(copy_list)
+# Output: ['Remove', 'Mall Road', 'Lahore', 'Faisal', 'Add']
 
 
 # ------------------------------------------------------
@@ -198,14 +233,17 @@ print(copy_list)
 # Squares
 squares = [x**2 for x in range(10)]
 print(squares)
+# Output: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 
 # Cubes
 cubes = [x**3 for x in range(10)]
 print(cubes)
+# Output: [0, 1, 8, 27, 64, 125, 216, 343, 512, 729]
 
 # Only even numbers
 evens = [x for x in range(20) if x % 2 == 0]
 print(evens)
+# Output: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
 
 
 # ------------------------------------------------------
@@ -216,5 +254,8 @@ students = ["Ali", "Ahmed", "Faisal"]
 
 a, b, c = students
 print(a)
+# Output: Ali
 print(b)
+# Output: Ahmed
 print(c)
+# Output: Faisal
